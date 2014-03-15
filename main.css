@@ -1,0 +1,131 @@
+/*
+      Created by Keith Donegan of Code-Sucks.com
+	  
+	  E-Mail: Keithdonegan@gmail.com
+	  
+	  You can do whatever you want with these layouts,
+	  but it would be greatly appreciated if you gave a link
+	  back to http://www.code-sucks.com
+	  
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 13px;
+	background-color: #B0ABBE;
+
+}
+#wrapper {
+	width: 1020px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+#faux {
+	background: url(faux-1-2-col.gif);
+	margin-bottom: 5px;
+	overflow: auto; /* Paul O Brien Fix for IE www.pmob.co.uk */
+	width: 1017px;
+}
+#header {
+	color: #333;
+	width: 1002px;
+	padding: 10px;
+	height: 60px;
+	margin: 10px 0px 5px 0px;
+	background: #D1DBDB;
+	text-align: right;
+}
+
+
+#navigation {
+	color: #333;
+	margin: 0px 0px 5px 0px;
+	background: #ABBEBE;
+	height: 34px;
+}
+#leftcolumn {
+	display: inline;
+	color: #333;
+	margin: 10px;
+	padding: 0px;
+	width: 200px;
+	float: none;
+}
+#rightcolumn {
+	float: left;
+	color: #333;
+	margin: 0px;
+	padding: 0px;
+	width: 850px;
+	display: inline;
+	position: relative;
+	height: 500px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#footer {
+	width: 1002px;
+	clear: both;
+	color: #333;
+	background: #ABBEBE;
+	margin: 0px 0px 10px 0px;
+	padding: 10px;
+	text-align:left;
+}
+.clear { clear: both; background: none; }
+
+
+
+.currentPage {
+	padding: 0 5px;
+	border: 1px solid #9aafe5;
+	text-decoration: none;
+	color: #2e6ab1;
+	background-color: #CCC;
+	border-color: #2b66a5;
+	font-weight: bold;
+	cursor: default;
+	font-weight: bold;
+	color: red;
+	
+}
+.loading {
+	font-family: Verdana;
+	font-weight:bold;
+	font-size: 12px;
+	line-height:20px;
+	cursor: pointer;
+	margin-top:0px;
+	margin-bottom:8px;
+	color:#900;
+}
+
+/* BeginOAWidget_Instance_2141544: #MenuBar */
+/* Settable values for skinning a Basic menu via presets. If presets are not sufficient, most skinning should be done in
+	these rules, with the exception of the images used for down or right pointing arrows, which are in the file SpryMenuBasic.css
+	
+	 These assume the following widget classes for menu layout (set in a preset)
+	.MenuBar - Applies to all menubars - default is horizontal bar, all submenus are vertical - 2nd level subs and beyond are pull-right.
+	.MenuBarVertical - vertical main bar; all submenus are pull-right.
+	
+	You can also pass in extra classnames to set your desired top level menu bar layout. Normally, these are set by using a preset. 
+	They only apply to horizontal menu bars:
+		MenuBarLeftShrink - The menu bar will be horizontally 'shrinkwrapped' to be just large enough to hold its items, and left aligned
+		MenuBarRightShrink - Just like MenuBarLeftShrink, but right aligned
+		MenuBarFixedLeft - Fixed at a specified width set in the rule '.MenuBarFixedLeft', and left aligned.  
+		MenuBarFixedCentered -  - Fixed at a specified width set in the rule '.MenuBarFixedCentered', 
+						and centered in its parent container.
+		MenuBarFullwidth - Grows to fill its parent container width.
+ 
+	In general, all rules specified in this file are prefixed by #MenuBar so they only apply to instances of the widget inserted along
+	with the rules. This permits use of multiple MenuBarBasic widgets on the same page with different layouts. Because of IE6 limitations,
+	there are a few rules where this was not possible. Those rules are so noted in comments.
+	
+*/

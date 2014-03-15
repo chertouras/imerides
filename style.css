@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+#two-column{
+	width: 590px;
+}
+#two-column #left{
+	width: 300px;
+	float: left;
+}
+#two-column #right{
+	width: 250px;
+	float: right;
+}
+#two-column p{
+	margin-bottom: 12px;
+}
+#two-column input[type="text"]{
+	border:none;
+	border:1px solid #000;
+	font-size :14px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 540px;
+	padding: 5px;
+}
+#two-column #right input[type="text"], #two-column #left input[type="text"]{
+	width:240px;
+}
+#two-column textarea {
+    position: relative;
+    padding: 5px;
+    border:1px solid #000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 540px;
+}
+#two-column input[type="submit"]  {
+	padding:8px 18px;
+	background:#222;
+	color:#fff;
+	border: 1px solid #fff;
+	float:right;
+	font-size: 14px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#two-column input[type="button"]  {
+	padding:8px 18px;
+	background:#222;
+	color:#fff;
+	border: 1px solid #fff;
+	float:right;
+	font-size: 14px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#two-column input[type="reset"]{
+	padding:8px 18px;
+	background:#222;
+	color:#fff;
+	border: 1px solid #fff;
+	float:right;
+	font-size: 14px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#two-column input[type="text"]:focus, #two-column textarea:focus{
+	background: #eee;
+}
+#two-column input[type="submit"]:hover{
+	background:#fff;
+	color:#222;
+	border: 1px solid #222;
+}#two-column input[type="reset"]:hover{
+	background:#fff;
+	color:#222;
+	border: 1px solid #222;
+}
+#two-column input[type="button"]:hover{
+	background:#fff;
+	color:#222;
+	border: 1px solid #222;
+}
