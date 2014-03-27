@@ -52,6 +52,9 @@ $parontes = json_decode(stripslashes($_POST['parousia']));
 
 mysql_select_db($database_imerida, $imerida);
 
+$sent = "UPDATE symmetexontes SET parousia =  '0' "; 
+   $Result1 = mysql_query($sent, $imerida) or die(mysql_error());
+
 if (is_array($parontes))
 {
 foreach($parontes as $key => $paron)

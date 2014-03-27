@@ -245,10 +245,10 @@ $("#apostoli").click(function(e){
     var keyArray = new Array();	
    for (var key in localStorage){
    keyArray.push(key);
-  // console.log(keyArray);
+
   }
    keyArray=JSON.stringify(keyArray);
- //alert(keyArray);
+
   
    var data = {
 	   
@@ -292,7 +292,7 @@ $('#resultstab tr').not(':first').hover(function() {
 
 $(document).ready(function() { 
     
-	$('#resultstab').dataTable({"aLengthMenu":  [[10], [10]],
+ var oTable =	$('#resultstab').dataTable({"aLengthMenu":  [[10], [10]],
             "oLanguage": {
                 
     "sProcessing":   "Επεξεργασία...",
@@ -316,14 +316,59 @@ $(document).ready(function() {
 
 	var count= <?php echo $count; ?>;
 if (count == 0 ){
-//$("#rightcolumn").hide();
 $("#hid").replaceWith('<br><br><br><h3> &nbsp;&nbsp; Δεν υπάρχουν αιτήσεις συμμετοχής </h3><br><br>');
 
 }
 	
 	
+	 function colortable (){
+ 
+$('#resultstab tr').not(':eq(0)').each(function(index) {
+
+var value = parseInt($(this).find("td:eq(6)").html());  
+ 
+ if (value == 1)
+	 {
+	 $(this).find('td:eq(0),td:gt(0)').css('background-color', ' red');
+	 	 
+	 }
+
+
+})
+
+ };
+colortable ();
+
+
+function initial_checkboxes()
+{
 	
-	//$.blockUI.defaults.css = {};
+var nNodes = oTable.fnGetNodes();	
+	
+	for (var i = 0; i < nNodes.length; i++) {
+
+
+var value = parseInt($(nNodes[i]).find("td:eq(6)").html());  
+ 
+if (value==1){
+$('input', nNodes[i]).prop('checked', true);
+
+var key = parseInt($(nNodes[i]).find("td:eq(0)").html());  
+localStorage.setItem(key,'checked');
+
+}
+
+}
+	
+	}
+
+initial_checkboxes();
+
+
+$('#resultstab_next , #resultstab_previous').click(function (){colortable ();});
+
+
+
 	
     $(document).ajaxStart(function() { 
         $("#rightcolumn").block({ message: 'Καταχώρηση Παρουσιολογίου...',
@@ -336,20 +381,7 @@ $("#hid").replaceWith('<br><br><br><h3> &nbsp;&nbsp; Δεν υπάρχουν α�
   
   
    
-  $('#resultstab tr').each(function() {
 
-var value = parseInt($(this).find("td:eq(7)").html());;  
-var valuenim = parseInt($(this).find("td:eq(8)").html());;  
- if (value == 1){
-	 
-	 if (valuenim==0)
-	 
-	 $(this).find('td:eq(0),td:gt(0)').addClass("actualgradient");
-	 else 
-	  $(this).find('td:eq(0),td:gt(0)').css('background-color', ' red');
-
-}
-});
    });
 
 
@@ -357,18 +389,12 @@ var valuenim = parseInt($(this).find("td:eq(8)").html());;
 
 $(document).ready(function() {
  
-$('#resultstab tr').each(function() {
-
-var value = parseInt($(this).find("td:eq(6)").html());  
-
- if (value == 1)
-	 
-	 $(this).find('td:eq(0),td:gt(0)').css('background-color', ' red');
-	 /*else 
-	  $(this).find('td:eq(0),td:gt(0)')addClass("actualgradient");*/
 
 
-});});
+
+
+
+});
 
 
 </script>
@@ -429,7 +455,6 @@ $('#rightcolumn').css('background','#9c9 ');
            
     <p>&nbsp;&nbsp;<a href="<?php echo $logoutAction ?>"><span style="color:#F00; font-size:80%">&#9632;</span>Log out</a></p></div>
     <div id='loader' style=" display:none"><img src="ajax-loader.gif"/> </div>
- <!--  <div id="refresh" style=" color:#000; width:870px; height:580px; float:left; margin-left:20px">-->
     <div id="rightcolumn" style=" color:#000; width:880px; height:625px; float:left; margin-left:0px">
     <span id="hid">  <p> <br />
       <h3>Καταχώρηση Παρουσιών</h3> </p>
@@ -449,7 +474,7 @@ $('#rightcolumn').css('background','#9c9 ');
     <th>email</th>
     <th class="hide">Παρουσία?</th>
         
-    <th>Παρών?</th> 
+    <th>Παρών</th> 
   </tr></thead><tbody>
   <?php do { ?>
     <tr align="center">
