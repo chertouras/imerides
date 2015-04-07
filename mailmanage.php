@@ -274,6 +274,7 @@ $("#apostoli").click(function(e){
     e.preventDefault();
     var keyArray = new Array();	
    for (var key in localStorage){
+     if (key.indexOf("@") >= 0)
    keyArray.push(key);
    
    }
@@ -322,7 +323,7 @@ $('#resultstab tr').not(':first').hover(function() {
 
 
 $(document).ready(function() { 
-    //$.blockUI.defaults.css = {};
+   
 	
     $(document).ajaxStart(function() { 
         $("#rightcolumn").block({ message: 'Αποστολή email...',
@@ -410,7 +411,7 @@ localStorage.clear();
 <div id="navigation" style="width:1100px">
   <center>
     <span style="color:#333; letter-spacing:5px; font:14px/16px Arial, Helvetica, sans-serif; font-weight: bolder; ">ΕΠΑΛ ΡΟΔΟΠΟΛΗΣ _ ΡΟΔΟΠΟΛΗ 62055 _ 2327022020 _ epal-rodop at sch.gr</span></p></center>
-</div> <!--ΝΑΩΙΓΑΤΙΟΝ ΕND-->
+</div> 
 <div id="faux" style="width:1100px">
 		 
 		       <!-- Begin Left Column -->
@@ -421,7 +422,7 @@ localStorage.clear();
     <p>&nbsp;&nbsp;<a href="add_new.php"><span style="color:   #F00; font-size:80%">&#9632;</span>Νέα Αίτηση Συμμετοχής </a></p>
     <p>&nbsp;&nbsp;<a href="participants.php"><span style="color:#F00; font-size:80%">&#9632;</span>Προβολή Αιτήσεων </a></p>  
     <p>&nbsp;&nbsp;<a id="linkshow"><span style="color: #F00; font-size:80%">&#9632;</span>Συμμετέχοντες Εκπαιδευτικοί </a> <br />
-        <!-- <span id="auto"> (Αυτόματα ενεργό από ΧΧ/ΧΧ/ΧΧ και μετά)</span> -->
+        
      <?php    if ($_SESSION['MM_Username'] == 'admin')
 	 {
 			  echo " 
@@ -449,7 +450,7 @@ $('#rightcolumn').css('background','#9c9 ');
            
     <p>&nbsp;&nbsp;<a href="<?php echo $logoutAction ?>"><span style="color:#F00; font-size:80%">&#9632;</span>Log out</a></p></div>
     <div id='loader' style=" display:none"><img src="ajax-loader.gif"/> </div>
- <!--  <div id="refresh" style=" color:#000; width:870px; height:580px; float:left; margin-left:20px">-->
+
     <div id="rightcolumn" style=" color:#000; width:890px; height:857px; float:left; margin-left:0px; font-size:11px">
     <span id="hid">  <br />   
       <h2>Ειδοποίηση με email</h2> 
@@ -484,7 +485,7 @@ $('#rightcolumn').css('background','#9c9 ');
         <td  class="hide"><?php echo $row_managers['epilogi']; ?></td>
           <td class="hide"><?php echo $row_managers['enimerothike']; ?></td>
       <td align="center"> <input type="checkbox" class ="chkbCsm" name="<?php echo $row_managers['email']; ?>" value="<?php echo $row_managers['email']; ?>" /></td>
-     <!--mailCB[]-->
+     
     </tr>
     <?php } while ($row_managers = mysql_fetch_assoc($managers)); ?>
 </table><br /><br />
@@ -519,7 +520,7 @@ $('#rightcolumn').css('background','#9c9 ');
 <p>&nbsp;</p></span>
     </div>
     
-<!--  </div> -->
+
     
 <p>&nbsp;</p>
 <p>&nbsp;</p>
