@@ -225,10 +225,8 @@ $(document).ready(function(){
 	 $('.del').confirm({
 
   msg:'Διαγραφή?<br>',
- // stopAfter:'ok',
-  eventType:'click',
- //timeout:3000,
-  buttons: {
+   eventType:'click',
+   buttons: {
     ok:'Ναι',
     cancel:'Όχι',
     separator:'/'
@@ -297,8 +295,11 @@ $("#apostoli").click(function(e){
     e.preventDefault();
     var keyArray = new Array();	
    for (var key in localStorage){
+    if (key.indexOf("@") >= 0)
    keyArray.push(key);
-   console.log(keyArray);}
+   
+   	
+   }
    keyArray=JSON.stringify(keyArray);
 
    if (keyArray.length > 2) { 
@@ -356,7 +357,7 @@ localStorage.clear();
   
   
   
-//    $.blockUI.defaults.css = {};
+
 	
     $(document).ajaxStart(function() { 
         $("#rightcolumn").block({ message: 'Παρακαλώ Περιμένετε...',
@@ -393,7 +394,7 @@ localStorage.clear();
 <div id="navigation" style="width:1100px">
   <center>
     <span style="color:#333; letter-spacing:5px; font:14px/16px Arial, Helvetica, sans-serif; font-weight: bolder; ">ΕΠΑΛ ΡΟΔΟΠΟΛΗΣ _ ΡΟΔΟΠΟΛΗ 62055 _ 2327022020 _ epal-rodop at sch.gr</span></p></center>
-</div> <!--ΝΑΩΙΓΑΤΙΟΝ ΕND-->
+</div> 
 <div id="faux" style="width:1100px">
 		 
 		       <!-- Begin Left Column -->
