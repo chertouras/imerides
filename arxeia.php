@@ -1,4 +1,4 @@
-	<?php
+<?php
 	
 //initialize the session
 if (!isset($_SESSION)) {
